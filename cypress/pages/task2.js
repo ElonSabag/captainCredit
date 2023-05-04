@@ -17,17 +17,12 @@ export class task2{
   #searchButton="#nav-search-submit-button"
   #productsList=".rush-component.s-latency-cf-section .s-product-image-container"
   #addToCartButton ="#add-to-cart-button"
-  // #currentColor="#variation_color_name > .a-row > .selection"
   #currentColor="#inline-twister-expanded-dimension-text-color_name"
-
-
-  // #colorList="#variation_color_name > .a-unordered-list" 
   #colorList="#inline-twister-expander-content-color_name li.a-declarative"
 
-//swatch-image-container
   #currentStyle="#inline-twister-expanded-dimension-text-style_name"
   #styleList="#inline-twister-expander-content-style_name .swatch-list-item-text" //start from 1
-  // #addToCartMsg=".a-size-medium-plus"
+  // #addToCartMsgScissors=".a-size-medium-plus"
   #addToCartMsg="#attachDisplayAddBaseAlert > .a-box-inner > .a-alert-heading"
   #productImage="#imgTagWrapperId"
 
@@ -38,18 +33,19 @@ export class task2{
   #cartProductsDeleteButtons="[name^='submit.delete']"
   #quantityDropdownList="[data-action='a-dropdown-button']"
   #deliveryMsgList=".sc-delivery-messaging span span" 
+  #emptyCartMsg=".a-spacing-mini.a-spacing-top-base"
 
   login=(email,password)=>{
     cy.get(this.#homePageLoginButton).click({ force: true }).wait(1000)
     cy.get(this.#enterEmail).type(email).wait(1000)
     cy.get(this.#confirmEmail).click({ force: true }).wait(1000)
     cy.get(this.#enterPassword).type(password)
-    cy.get(this.#submitButton).click({ force: true }).wait(10000)
-
+    cy.get(this.#submitButton).click({ force: true })
+    cy.get(this.#cartPage,{timeout:10000})
   }
 
   searchProduct=(productName)=>{
-    cy.get(this.#searchBar).type(productName, {delay:5}).wait(100)
+    cy.get(this.#searchBar).type(productName).wait(100)
     cy.get(this.#searchButton).click()
   }
 
@@ -58,7 +54,7 @@ export class task2{
   }
 
   addProductToCart=()=>{
-    cy.get(this.#addToCartButton).click()
+    cy.get(this.#addToCartButton,{timeout:4000}).click()
   }
 
   validateProductAdded=()=>{
@@ -69,10 +65,6 @@ export class task2{
     cy.get(this.#productImage)
         .wait(10000)
         .should('be.visible')
-  }
-
-  changeStyle=()=>{
-
   }
 
   changeColor=(color)=>{
@@ -105,24 +97,8 @@ export class task2{
         }
         cy.get(this.#cartProductsDeleteButtons).eq(0).click({ force: true })
       })
+      cy.get(this.#emptyCartMsg,{timeout:10000})
     }
-
-    // getPencilSharpenerPlaceInCart=()=>{
-    //   let text = "sdfsdf"
-    //   cy.get(this.#prodcutsNamesList).then((prodcutsNamesList)=>{
-    //     for (let index = 0; index < prodcutsNamesList.length; index++) {
-    //       cy.get(this.#prodcutsNamesList).eq(index).invoke('text').then((names)=>{
-    //         if (names.includes('Scissors')){  
-    //           // cy.log(index)
-    //           text="gdgdg"
-    //           return ""+ text;
-    //         }
-    //       }).then((result)=>{return this.result})
-    //       // return text;
-    //     }
-    //     // return text;
-    //   })
-    // }
 
     orderMoereScissors=()=>{
       cy.get(this.#quantityDropdownList).then((quantityDropdown)=>{
@@ -132,10 +108,8 @@ export class task2{
     }
 
     scissorsDeliveryStatus=()=>{
-      // cy.get(this.#deliveryMsgList).then((deliveryMsgList)=>{
         cy.get(this.#deliveryMsgList).eq(0).invoke('text').should('contain','Shipping fee applies')
         this.orderMoereScissors()
         cy.get(this.#deliveryMsgList).eq(0).invoke('text').should('contain','FREE Shipping')
-      // })
     }
 }
