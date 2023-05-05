@@ -12,7 +12,7 @@ const cartLink="https://www.amazon.com/gp/cart/view.html?ref_=nav_cart"
 const email="examplenovaop@gmail.com"
 const password="elon0268"
 
-describe('Aliasing', () => {
+describe('task2', () => {
     beforeEach(() => {
       cy.visit(productsToAddBeforeTest[0])
       task.addProductToCart()
@@ -20,7 +20,6 @@ describe('Aliasing', () => {
       cy.visit(productsToAddBeforeTest[1])
       task.addProductToCart()
       task.validateProductAdded()
-      cy.wait(1000000)
     })
 
     it('Add pencil sharpener to the cart', () => {

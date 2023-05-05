@@ -8,10 +8,6 @@ export class task2{
   #confirmEmail=".a-button-inner > #continue"
   #enterPassword="#ap_password"
   #submitButton="#signInSubmit"
-  #rememberMeButton="[name='rememberMe']"
-
-
-  
 
   #searchBar="#twotabsearchtextbox"
   #searchButton="#nav-search-submit-button"
@@ -20,16 +16,11 @@ export class task2{
   #currentColor="#inline-twister-expanded-dimension-text-color_name"
   #colorList="#inline-twister-expander-content-color_name li.a-declarative"
 
-  #currentStyle="#inline-twister-expanded-dimension-text-style_name"
-  #styleList="#inline-twister-expander-content-style_name .swatch-list-item-text" //start from 1
-  // #addToCartMsgScissors=".a-size-medium-plus"
   #addToCartMsg="#attachDisplayAddBaseAlert > .a-box-inner > .a-alert-heading"
   #productImage="#imgTagWrapperId"
 
-
   //cart
   #cartPage="#nav-cart"
-  #prodcutsNamesList=".sc-product-link span span span.a-truncate-cut"
   #cartProductsDeleteButtons="[name^='submit.delete']"
   #quantityDropdownList="[data-action='a-dropdown-button']"
   #deliveryMsgList=".sc-delivery-messaging span span" 
