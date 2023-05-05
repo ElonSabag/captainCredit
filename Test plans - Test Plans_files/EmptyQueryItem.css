@@ -1,0 +1,12 @@
+.empty-query-item {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.empty-query-item span {
+  margin-right: 4px;
+}
+
+.empty-query-item a {
+  margin-right: 2px;
+}

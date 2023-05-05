@@ -1,0 +1,10 @@
+.query-modifiedby-cell-component {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.query-modifiedby-cell-tooltip-host {
+  display: inline;
+}

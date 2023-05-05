@@ -25,36 +25,4 @@ describe('task1', () =>  {
         task.wasThisInformationHelpful('no')
         task.goToYourOrders()
     })
-      
-        // it('should display the "Track Your Package" button', () => {
-        //   cy.get('#search-customer-service').type('Track Your Package{enter}')
-        //   cy.get('.cs-search-result-container')
-        //     .contains('Track Your Package')
-        //     .should('be.visible')
-        // })
-      
-        // it('should display the tracking information when a valid order ID is entered', () => {
-        //   cy.get('#search-customer-service').type('Track Your Package{enter}')
-        //   cy.get('.cs-search-result-container')
-        //     .contains('Track Your Package')
-        //     .should('be.visible')
-        //     .click()
-      
-        //   cy.get('#search-terms-input').type('123-4567890-1234567')
-        //   cy.get('#track-your-package-button').click()
-        //   cy.get('.a-section.ship-track-container').should('be.visible')
-        // })
-      
-        // it('should display an error message when an invalid order ID is entered', () => {
-        //   cy.get('#search-customer-service').type('Track Your Package{enter}')
-        //   cy.get('.cs-search-result-container')
-        //     .contains('Track Your Package')
-        //     .should('be.visible')
-        //     .click()
-      
-        //   cy.get('#search-terms-input').type('invalid-order-id')
-        //   cy.get('#track-your-package-button').click()
-        //   cy.get('.a-alert-heading').should('have.text', 'There was a problem')
-        // })      
-      
 })

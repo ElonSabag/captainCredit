@@ -1,0 +1,78 @@
+.vssf-contextualMenu-list {
+  min-width: 235px;
+}
+
+.queries-view-hub-container {
+  height: 100%;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.queries-view-hub-container .hub-messages {
+  flex-grow: 0;
+}
+
+.queries-view-hub-container .queries-view-hub {
+  flex-grow: 1;
+}
+
+.queries-view-hub-container .queries-view-hub .more-results-label {
+  margin-top: 5px;
+}
+
+.queries-view-hub-container .queries-view-hub .vss-HubTitle--titleText {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.queries-view-hub-container .queries-view-hub .favorite-queries-pivot,
+.queries-view-hub-container .queries-view-hub .all-queries-pivot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 10px;
+  top: 0;
+}
+
+.queries-view-hub-container .queries-view-hub .bowtie-icon.bowtie-chevron-right {
+  margin-right: 2px;
+  transform: rotate(0deg);
+  cursor: pointer;
+}
+
+.queries-view-hub-container .queries-view-hub .bowtie-icon.bowtie-chevron-right.expanded {
+  transform: rotate(90deg);
+}
+
+.queries-view-hub-container .queries-view-hub .favorite-queries .queries-favorites-list-header {
+  cursor: default;
+  min-height: 36px;
+  padding-left: 8px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  padding-top: 7px;
+  border: 1px solid transparent;
+  color: rgba(0, 0, 0, .9);
+  color: var(--text-primary-color,rgba(0, 0, 0, .9));
+}
+
+.queries-view-hub-container .queries-view-hub .favorite-queries .queries-favorites-list-header:hover {
+  background-color: rgba( 244, 244, 244 ,  1 );
+  background-color: rgba( var(--palette-neutral-4,244, 244, 244) ,  1 );
+}
+
+.queries-view-hub-container .queries-view-hub .favorite-queries .queries-favorites-list-header:focus {
+  background-color: rgba( 239, 246, 252 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-40,239, 246, 252) ,  1 );
+  border: 1px solid rgba(0, 120, 212, 1);
+  border: 1px solid var(--communication-background,rgba(0, 120, 212, 1));
+}
+
+.queries-view-hub-container .queries-view-hub .favorite-queries .queries-favorites-list-header .queries-favorite-list-header-name {
+  margin-left: 2px;
+  font-weight: 600;
+}

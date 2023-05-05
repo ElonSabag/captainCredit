@@ -1,0 +1,5 @@
+.new-queries-view .queries-view-content {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+}

@@ -1,0 +1,2 @@
+define("OfficeFabric/components/DocumentCard/DocumentCard.types",["require","exports"],function(n,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i;(function(n){n[n.normal=0]="normal";n[n.compact=1]="compact"})(i=t.DocumentCardType||(t.DocumentCardType={}))});
+

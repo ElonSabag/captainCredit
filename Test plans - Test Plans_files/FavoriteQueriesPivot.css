@@ -1,0 +1,9 @@
+.query-column-cell.query-name .empty-query-item.query-name-ellipsis-empty .empty-team-favorite-group-text {
+  color: rgba(0, 90, 158, 1);
+  color: var(--communication-foreground,rgba(0, 90, 158, 1));
+}
+
+.queries-favorites-list-header .query-favorite-spinner {
+  margin-bottom: -3px;
+  display: inline-block;
+}

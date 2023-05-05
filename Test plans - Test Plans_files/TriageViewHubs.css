@@ -1,0 +1,1130 @@
+/** Accessibility content container class for SDK Charts*/
+.hidden-accessible-chart-text-container {
+  /*  This class is intended for visual concealment of accessible html table of related chart content, while retaining visibility in screen reader.
+        See the following page for suggestions.
+        https://webaim.org/techniques/css/invisiblecontent/
+    */
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/** Highcharts Modern Pie-Center Style*/
+.pie-chart-center-value {
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
+}
+
+/** Highcharts layout Engine doesn't honor cases of long labels with no spaces. */
+.limited-label-chart .highcharts-legend-item > span {
+  white-space: pre;
+  max-width: 72px;
+}
+
+/** High Contrast styles for Common SDK charts*/
+.highcharts-tooltip .header-block {
+  margin-bottom: 3px;
+}
+
+.highcharts-tooltip .category-text {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.highcharts-tooltip .category-color {
+  vertical-align: middle;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+.highcharts-tooltip .tooltip-color {
+  shape-rendering: crispEdges;
+  stroke-opacity: 0;
+  stroke-width: 1px;
+}
+
+/* By default, Chart content text can not be selectable.*/
+.chart-instance.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.chart-instance {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.chart-hosts-list > .chart-hosts-list-items {
+  display: block;
+  margin: 15px;
+}
+
+.chart-hosts-list > .message-block {
+  width: auto;
+  margin: 20px;
+  display: block;
+}
+
+.chart-hosts-list > .message-block.invalid {
+  padding: 10px;
+  font-size: 16px;
+  background-color: rgba( 255, 255, 255 ,  1 );
+  background-color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+  color: rgba(0, 0, 0, .9);
+  color: var(--text-primary-color,rgba(0, 0, 0, .9));
+}
+
+.chart-hosts-list > .message-block.collapsed {
+  display: none;
+}
+
+.chart-empty-dataset {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chart-empty-dataset .message-header {
+  font-family: "Segoe UI VSS (Regular)","Segoe UI","-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  color: rgba(0, 120, 212, 1);
+  color: var(--communication-background,rgba(0, 120, 212, 1));
+  padding-top: 25px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.chart-empty-dataset .message-body {
+  font-family: "Segoe UI VSS (Regular)","Segoe UI","-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  color: rgba(0, 120, 212, 1);
+  color: var(--communication-background,rgba(0, 120, 212, 1));
+  line-height: 26px;
+  margin-bottom: 7px;
+  text-align: center;
+}
+
+.chart-host .message-block.collapsed {
+  display: none;
+}
+
+.chart-host .message-block {
+  font-family: "Segoe UI VSS (Regular)","Segoe UI","-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 12px;
+  color: rgba( 0, 0, 0 ,  1 );
+  color: rgba( var(--palette-neutral-100,0, 0, 0) ,  1 );
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chart-hosts-list {
+  background-color: rgba( 255, 255, 255 ,  1 );
+  background-color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+  /* Chart hosts list contains chart elements.
+    This was a precursor to the dashboards role of containment of widgets. */
+}
+
+.chart-hosts-list .chart-container {
+  /* used float left for L->R placement of chart controls.  */
+  float: left;
+  position: relative;
+  background-color: rgba( 255, 255, 255 ,  1 );
+  background-color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+  border:  1px solid;
+  border-color: rgba( 200, 200, 200 ,  1 );
+  border-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+}
+
+.chart-hosts-list .message-block .message-icon {
+  vertical-align: middle;
+}
+
+.chart-hosts-list .message-block .message-text {
+  display: inline;
+  vertical-align: middle;
+}
+
+/* The Status container normally hosts large icons. Small icons need to align to the status text.*/
+.chart-instance .status .icon {
+  margin-top: -2px;
+  margin-right: 5px;
+}
+
+.chart-edit-body .chart-container,
+.chart-hosts-list .chart-container {
+  /** Apply high contrast-only borders to the charts in context of legacy editor and list (not in widget). */
+}
+
+.chart-configuration-dialog-container {
+  overflow: visible;
+}
+
+.chart-configuration-dialog-container .ui-dialog-titlebar {
+  overflow: hidden;
+}
+
+.chart-configuration-dialog-container .chart-configuration-dialog {
+  overflow: hidden;
+}
+
+.chart-configuration-dialog .chart-container {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+/** Charts Page Size and Margin for each chart-host on the Charts Page (Not in Editor, or Widget)*/
+.chart-hosts-list .chart-container.chart-host {
+  margin: 5px;
+  width: 312px;
+}
+
+.chart-host > .chart-host-header > .chart-host-title {
+  font-family: "Segoe UI VSS (Regular)","Segoe UI","-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  color: rgba( 0, 0, 0 ,  1 );
+  color: rgba( var(--palette-neutral-100,0, 0, 0) ,  1 );
+  max-height: 26px;
+  padding-right: 32px;
+  padding-bottom: 2px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* chart-host-title is an H2, but requires local override of style for alignment with Chart/Widget presentation, over defaults.*/
+  margin: 0;
+  font-weight: normal;
+}
+
+.chart-hosts-list-items .chart-host > .chart-host-header > .chart-host-title {
+  padding-top: 3px;
+  padding-left: 10px;
+}
+
+.chart-hosts-list-items .chart-host > .chart-host-header {
+  float: none;
+  height: 26px;
+  max-height: 26px;
+}
+
+.chart-host > .chart-host-header > .menu-bar {
+  float: right;
+}
+
+.chart-host > .chart-host-header > .ellipsis-menubar {
+  float: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.chart-host > .chart-host-header .menu-bar .menu-item.hover > span.icon-edit-grey-f1-background {
+  background: url("../../_content/tfs-icons.png") no-repeat -1584px -16px !important;
+}
+
+.chart-host > .chart-host-header .menu-bar .menu-item.hover > span.icon-delete-grey-f1-background {
+  background: url("../../_content/tfs-icons.png") no-repeat -1168px -16px !important;
+}
+
+.chart-template-list-container {
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.chart-template-list-container .chart-template-list-label {
+  padding-bottom: 6px;
+}
+
+/** Chart Configuration Dialog Styling (Legacy Scenario)*/
+.chart-template-list {
+  width: 200px;
+  background-color: rgba( 255, 255, 255 ,  1 );
+  background-color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+  border:  1px solid;
+  border-color: rgba( 218, 218, 218 ,  1 );
+  border-color: rgba( var(--palette-neutral-10,218, 218, 218) ,  1 );
+  display: inline-block;
+  vertical-align: top;
+}
+
+.chart-template-list a {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 38px;
+  line-height: 30px;
+  position: relative;
+  padding: 4px;
+  padding-left: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: rgba( 16, 110, 190 ,  1 );
+  color: rgba( var(--palette-primary-shade-10,16, 110, 190) ,  1 );
+}
+
+.chart-template-list a .title {
+  padding-left: 8px;
+  padding-top: 3px;
+}
+
+.chart-template-list a.selected {
+  background-color: rgba( 239, 246, 252 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-40,239, 246, 252) ,  1 );
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.chart-template-list a .icon {
+  top: 10px;
+}
+
+/* End of LW Chart Widget Config Blade styles */
+.chart-configuration-dialog .chart-dialog-body {
+  display: inline-block;
+}
+
+.chart-configuration-dialog .tfs-service-status-notification.message-area-control {
+  /* Override Service Notification layout for use in the dialog. */
+  width: 100%;
+  margin-left: 0px;
+  margin-bottom: 16px;
+}
+
+.chart-title-editor.combo {
+  width: 200px;
+}
+
+.chart-configuration-dialog .chart-edit-body {
+  padding-left: 20px;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 220px;
+}
+
+.chart-configuration-block {
+  width: 200px;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.chart-configuration-tip {
+  margin-left: 2px;
+  position: absolute;
+  cursor: pointer;
+  font-family: 'Bowtie';
+  font-size: 14px;
+  speak: none;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-align: center;
+  line-height: 16px;
+  -webkit-font-smoothing: antialiased;
+  margin: 2px 0 0 8px;
+  position: relative;
+  float: right;
+}
+
+.chart-configuration-dialog .chart-configuration-block .chart-configuration-label-row {
+  /*Style only on legacy Chart: Explicitly provide padding under label row. Bowtie styles need to be consolidated to apply consistently for both Config and Dialog.*/
+  padding-bottom: 6px;
+}
+
+/* Suppress all standard yellow highlight styling when the control is not in an valid state(empty).
+   Any selected state is valid. */
+.chart-configuration-editor .chart-configuration-block .combo.invalid,
+.chart-configuration-editor .chart-configuration-block .combo.invalid div.wrap,
+.chart-configuration-editor .chart-configuration-block .combo.invalid div.wrap input,
+.chart-configuration-editor .chart-configuration-measure-property .combo.invalid,
+.chart-configuration-editor .chart-configuration-measure-property .combo.invalid div.wrap,
+.chart-configuration-editor .chart-configuration-measure-property .combo.invalid div.wrap input {
+  background-color: rgba( 255, 255, 255 ,  1 );
+  background-color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+}
+
+.chart-configuration-block .combo:invalid {
+  border-color: rgba( 218, 218, 218 ,  1 );
+  border-color: rgba( var(--palette-neutral-10,218, 218, 218) ,  1 );
+}
+
+.chart-configuration-block ::placeholder,
+.chart-configuration-block .chart-configuration-combo-watermark input {
+  font-style: italic;
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.chart-configuration-block .chart-configuration-label-row-error {
+  padding-left: 2px;
+  color: rgba( 168, 0, 0 ,  1 );
+  color: rgba( var(--palette-accent1-dark,168, 0, 0) ,  1 );
+}
+
+.chart-configuration-block .chart-configuration-label-row {
+  min-width: 36px;
+}
+
+.chart-configuration-block .chart-configuration-label-row .chart-configuration-label-cell {
+  display: inline-block;
+}
+
+.chart-configuration-block .chart-configuration-input-row {
+  display: inline-block;
+  float: left;
+}
+
+.chart-configuration-block .chart-configuration-order-property {
+  float: left;
+}
+
+.chart-configuration-block .chart-configuration-order-property.compact {
+  width: 100px;
+}
+
+.chart-configuration-block .chart-configuration-order-direction {
+  margin-left: 10px;
+  width: 89px;
+  float: left;
+}
+
+.chart-configuration-block .chart-configuration-measure-aggregation.compact {
+  width: 60px;
+  float: left;
+}
+
+.chart-configuration-block .chart-configuration-measure-of {
+  margin-left: 6px;
+  float: left;
+  width: 16px;
+  padding-top: 3px;
+}
+
+.chart-configuration-block .chart-configuration-measure-property {
+  margin-left: 6px;
+  width: 112px;
+  float: left;
+}
+
+.chart-configuration-block .collapse {
+  display: none;
+  visibility: collapse;
+  height: 0px;
+  margin: 0px;
+}
+
+/*Legacy Direct manipulation Color Picker CSS */
+.color-popup-body {
+  z-index: 4000;
+  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--background-color,rgba(255, 255, 255, 1));
+  width: 180px;
+  height: 92px;
+  position: fixed;
+  outline: none;
+  box-shadow: rgba( 218, 218, 218 ,  1 ) 0 0 5px;
+  box-shadow: rgba( var(--palette-neutral-10,218, 218, 218) ,  1 ) 0 0 5px;
+  border-radius: 2px;
+  border:  1px solid;
+  border-color: rgba( 200, 200, 200 ,  1 );
+  border-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+}
+
+.color-popup-body * {
+  outline: none;
+}
+
+.color-picker-patch {
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.color-picker-patch-selected {
+  border:  1px solid;
+  border-color: rgba( 239, 246, 252 ,  1 );
+  border-color: rgba( var(--palette-primary-tint-40,239, 246, 252) ,  1 );
+  outline: rgba(0, 90, 158, 1) solid 1px;
+  outline: var(--communication-foreground,rgba(0, 90, 158, 1)) solid 1px;
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.chart-configuration-dialog.chartpin .chart-container {
+  padding-left: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.ui-dialog.chart-configuration-dialog-container .chart-configuration-dialog.chartpin {
+  overflow: auto;
+}
+
+.ui-dialog.chart-configuration-dialog-container .chart-configuration-dialog.chartpin .chart-empty-dataset {
+  transform: none;
+  top: 0;
+  left: 0;
+}
+
+.message-form table {
+  width: 100%;
+}
+
+.message-form .label {
+  width: 50px;
+  white-space: nowrap;
+  padding-right: 10px;
+  vertical-align: top;
+  line-height: 20px;
+}
+
+.message-form input {
+  border:  1px solid;
+  border-color: rgba( 200, 200, 200 ,  1 );
+  border-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+  width: 100%;
+}
+
+.message-form input.disabled {
+  cursor: default;
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+/*
+ * The input in a dropdown/combo control, e.g. IdentityPicker,
+ * only needs the border for the outer input.
+ */
+.send-mail-dialog .message-form .search-input-wrapper .search-input {
+  border: 0;
+}
+
+.bowtie-style.send-mail-dialog .message-form .search-input-wrapper .search-input {
+  height: inherit;
+}
+
+.message-form .dropdown-input-text {
+  border: 0;
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .dropdown-input-text {
+  border: 0 !important;
+  /* Override new bowtie style for input to avoid double border */
+  height: 24px !important;
+  /* Override new bowtie style for input since this input has a wrapper */
+  background-color: transparent;
+  font-size: 100%;
+  line-height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .dropdown-input-inputarea {
+  height: 24px;
+}
+
+.message-form .body-container {
+  padding: 10px 0 10px 0;
+}
+
+.bowtie-style.send-mail-dialog textarea {
+  height: 130px;
+  resize: none;
+  overflow: auto;
+}
+
+.bowtie-style.send-mail-dialog .email-read-only-body {
+  max-height: 180px;
+}
+
+.bowtie-style.send-mail-dialog .email-read-only-body a {
+  color: rgba( 16, 110, 190 ,  1 );
+  color: rgba( var(--palette-primary-shade-10,16, 110, 190) ,  1 );
+}
+
+.bowtie-style.send-mail-dialog .email-read-only-body table th {
+  font-family: "Segoe UI VSS (Regular)","Segoe UI","-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 12px;
+}
+
+.bowtie-style.send-mail-dialog .email-read-only-body table td {
+  max-width: 50px;
+  font-family: "Segoe UI VSS (Regular)","Segoe UI","-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Ubuntu,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 12px;
+}
+
+.bowtie-style.send-mail-dialog .email-new-note-label {
+  display: inline !important;
+  /* Override bowtie style for Note label since we want it in the same line */
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .identity-input.email-input-to-focused,
+.bowtie-style.send-mail-dialog .message-form.new-form .identity-input.email-input-to-focused:hover {
+  border-color: rgba(0, 120, 212, 1);
+  border-color: var(--communication-background,rgba(0, 120, 212, 1));
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .identity-input:hover {
+  border-color: rgba( 166, 166, 166 ,  1 );
+  border-color: rgba( var(--palette-neutral-30,166, 166, 166) ,  1 );
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .identity-input {
+  width: 600px;
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .email-input-to.email-input-to-focused,
+.bowtie-style.send-mail-dialog .message-form.new-form .email-input-to.email-input-to-focused:hover {
+  border-color: rgba(0, 120, 212, 1);
+  border-color: var(--communication-background,rgba(0, 120, 212, 1));
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .email-input-to:hover {
+  border-color: rgba( 166, 166, 166 ,  1 );
+  border-color: rgba( var(--palette-neutral-30,166, 166, 166) ,  1 );
+}
+
+.bowtie-style.send-mail-dialog textarea:focus {
+  border-color: rgba(0, 120, 212, 1);
+  border-color: var(--communication-background,rgba(0, 120, 212, 1));
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .select-tester-identity-picker {
+  overflow-y: auto;
+  max-height: 52px;
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .email-input-subject {
+  height: 28px !important;
+  /* Override input height from bowtie style, too high in our scenario */
+}
+
+.bowtie-style.send-mail-dialog .email-note-container {
+  margin: 24px 0 0 0;
+}
+
+.send-mail-dialog .messagearea-container {
+  margin-bottom: 2px;
+}
+
+.send-mail-dialog .email-editable-body {
+  margin-top: 5px;
+  width: 100%;
+  height: 136px;
+  overflow: auto;
+  background-color: inherit;
+  resize: none;
+  border:  1px solid;
+  border-color: rgba( 200, 200, 200 ,  1 );
+  border-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+}
+
+.send-mail-dialog .email-read-only-body {
+  max-height: 208px;
+  overflow: auto;
+}
+
+.send-mail-dialog .email-read-only-content {
+  margin-top: 5px;
+}
+
+.send-mail-dialog .email-read-only-body > div {
+  position: relative;
+}
+
+.send-mail-dialog .email-read-only-body .overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba( 244, 244, 244 ,  1 );
+  background-color: rgba( var(--palette-neutral-4,244, 244, 244) ,  1 );
+}
+
+.send-mail-dialog .message-form.new-form .email-input-to {
+  border:  1px solid;
+  border-color: rgba( 218, 218, 218 ,  1 );
+  border-color: rgba( var(--palette-neutral-10,218, 218, 218) ,  1 );
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .identity-picker-input {
+  border: none !important;
+  /* Override the bowtie-style to avoid double border */
+  width: 100%;
+  height: 24px !important;
+  /* This is a input inside a wrapper, too height in our scenario */
+}
+
+.send-mail-dialog .message-form.new-form .select-tester-identity-picker {
+  max-height: 52px;
+  overflow-y: visible;
+}
+
+.bowtie-style.send-mail-dialog .message-form.new-form .email-subject-row input {
+  padding-left: 8px;
+}
+
+.send-mail-dialog .message-form.new-form .email-subject-row input {
+  line-height: 18px;
+  outline: 0;
+  padding-left: 2px;
+  background-color: inherit;
+}
+
+.send-mail-dialog .message-form.new-form .label {
+  margin-top: 4px;
+}
+
+.send-mail-dialog .message-form.new-form > table {
+  table-layout: fixed;
+}
+
+.send-mail-dialog .email-read-only-body table td,
+.send-mail-dialog .email-read-only-body table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.send-mail-dialog .message-form.new-form .email-note-label {
+  display: inline-block;
+}
+
+.send-mail-dialog .message-form.new-form .email-read-only-label {
+  padding-top: 4px;
+}
+
+.send-mail-dialog .message-form.new-form .email-characters-count {
+  float: right;
+}
+
+.send-mail-dialog .message-form.new-form .email-characters-count.email-count-error {
+  color: rgba( 168, 0, 0 ,  1 );
+  color: rgba( var(--palette-accent1-dark,168, 0, 0) ,  1 );
+}
+
+.ui-dialog .send-mail-dialog.mail-work-items {
+  overflow: hidden;
+}
+
+.ui-dialog .send-mail-dialog.mail-work-items th {
+  text-align: left;
+}
+
+@media screen and (max-height: 900px) {
+  .send-mail-dialog.bowtie-style.mail-work-items {
+    height: 424px !important;
+    /* Override inline style from dialog */
+  }
+  .send-mail-dialog.bowtie-style.mail-work-items textarea {
+    height: 70px;
+  }
+  .send-mail-dialog.bowtie-style.mail-work-items .email-read-only-body {
+    max-height: 105px;
+  }
+  .send-mail-dialog.bowtie-style.mail-work-items .message-form.new-form .email-input-subject {
+    height: 22px !important;
+    font-size: 11px;
+  }
+  .send-mail-dialog.bowtie-style.mail-work-items .message-form.new-form .dropdown-input-text,
+  .send-mail-dialog.bowtie-style.mail-work-items .message-form.new-form .dropdown-input-inputarea {
+    height: 18px !important;
+  }
+}
+
+.identity-view-control {
+  position: relative;
+  height: 20px;
+}
+
+.identity-view-control > img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.identity-view-control.no-image > span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.identity-view-control > span {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  left: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+/** Automatically converted from QueryResultsGrid.css **/
+.query-result-grid.grid {
+  border: 0;
+}
+
+.query-result-grid .grid-header {
+  z-index: 8;
+}
+
+.query-result-grid.grid.has-grid-message-area .grid-header {
+  top: 2.4em;
+}
+
+.query-result-grid.grid.has-grid-message-area .grid-canvas {
+  top: 4.6em;
+}
+
+.query-result-grid.has-grid-message-area .message-area-control {
+  margin: 0px 12px;
+}
+
+.dirty-workitem-row {
+  font-weight: bold;
+}
+
+.grid-row.invalid-workitem-row {
+  color: rgba( 168, 0, 0 ,  1 );
+  color: rgba( var(--palette-accent1-dark,168, 0, 0) ,  1 );
+}
+
+.grid-cell .work-item-type-icon, .grid-cell .error-icon {
+  margin-left: 5px;
+}
+
+.grid-row:hover a.work-item-title-link,
+.grid-row-selected a.work-item-title-link {
+  color: rgba( 0, 90, 158 ,  1 );
+  color: rgba( var(--palette-primary-shade-20,0, 90, 158) ,  1 );
+}
+
+.grid-row:hover a.work-item-title-link:link, .grid-row:hover a.work-item-title-link:visited,
+.grid-row-selected a.work-item-title-link:link,
+.grid-row-selected a.work-item-title-link:visited {
+  color: rgba( 0, 90, 158 ,  1 );
+  color: rgba( var(--palette-primary-shade-20,0, 90, 158) ,  1 );
+}
+
+.grid-row:hover a.work-item-title-link.disabled,
+.grid-row-selected a.work-item-title-link.disabled {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+  pointer-events: none;
+}
+
+.grid-row:hover a.work-item-title-link.disabled:link, .grid-row:hover a.work-item-title-link.disabled:visited,
+.grid-row-selected a.work-item-title-link.disabled:link,
+.grid-row-selected a.work-item-title-link.disabled:visited {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.invalid-workitem-row:not(.grid-row-selected):not(:hover) a.work-item-title-link {
+  color: rgba( 168, 0, 0 ,  1 );
+  color: rgba( var(--palette-accent1-dark,168, 0, 0) ,  1 );
+}
+
+.invalid-workitem-row:not(.grid-row-selected):not(:hover) a.work-item-title-link:link, .invalid-workitem-row:not(.grid-row-selected):not(:hover) a.work-item-title-link:visited {
+  color: rgba( 168, 0, 0 ,  1 );
+  color: rgba( var(--palette-accent1-dark,168, 0, 0) ,  1 );
+}
+
+.invalid-workitem-row.grid-gutter-row {
+  padding-top: 3px;
+  padding-left: 6px;
+  font-size: 14px;
+}
+
+.invalid-workitem-row.grid-gutter-row:before {
+  font-family: "Bowtie";
+  font-size: 14px;
+  speak: none;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+  line-height: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\EA02";
+  font-weight: normal;
+  font-style: normal;
+  color: rgba( 168, 0, 0 ,  1 );
+  color: rgba( var(--palette-accent1-dark,168, 0, 0) ,  1 );
+  margin-right: 5px;
+}
+
+.description-popup-content-container.popup-content-control {
+  min-width: 200px;
+  word-wrap: break-word;
+  max-width: 400px;
+  max-height: 300px;
+  width: auto;
+  /* This is to override the base control css */
+}
+
+.description-popup-content-container.popup-content-control .popup-content-container {
+  background-color: rgba( 251, 242, 236 ,  1 );
+  background-color: rgba( var(--palette-accent3-light,251, 242, 236) ,  1 );
+  box-shadow: 5px 5px 5px -2px rgba( 166, 166, 166 ,  1 );
+  box-shadow: 5px 5px 5px -2px rgba( var(--palette-neutral-30,166, 166, 166) ,  1 );
+  padding: 5px 10px;
+}
+
+.popup-content-control.rich-content-tooltip.description-popup-content-container .popup-tag::after {
+  border-bottom-color: rgba( 251, 242, 236 ,  1 );
+  border-bottom-color: rgba( var(--palette-accent3-light,251, 242, 236) ,  1 );
+}
+
+.description-popup-content-container .description-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 200px;
+  max-width: 400px;
+  max-height: 300px;
+  padding: 0 10px 0 15px;
+}
+
+.query-result-grid .grid-cell .tags-items-container ul > li {
+  margin-right: 3px;
+}
+
+.hub-view.explorer .right-hub-content.below-1-message {
+  top: 83px;
+}
+
+.hub-view.explorer .right-hub-content.below-2-messages {
+  top: 130px;
+}
+
+.multi-field-edit .clauses .operator {
+  width: 35px;
+}
+
+.multi-field-edit .clauses .operator .multifieldedit-operator-control {
+  border: 0;
+  background: none;
+}
+
+.multi-field-edit .clauses .operator .multifieldedit-operator-control .wrap {
+  background: none;
+}
+
+.multi-field-edit .clauses .operator .multifieldedit-operator-control .wrap input {
+  width: calc(100% - 20px);
+  display: block;
+  margin: 0 auto;
+}
+
+.multi-field-edit .clauses .field {
+  width: 35%;
+}
+
+.multi-field-edit .clauses .value .field-filter-value-control .combo, .multi-field-edit .clauses .value .field-filter-value-control .identity-picker-search-box, .multi-field-edit .clauses .value .field-filter-value-control .tree-picker-combo {
+  border:  1px solid;
+  border-color: rgba( 218, 218, 218 ,  1 );
+  border-color: rgba( var(--palette-neutral-10,218, 218, 218) ,  1 );
+}
+
+.multi-field-edit .clauses .value .field-filter-value-control .identity-picker-search-box {
+  height: 1.7em !important;
+}
+
+.work-items-view.new-queries-view {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+}
+
+.hub-flex {
+  display: flex;
+}
+
+.triage-view-hub-container {
+  height: 100%;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.triage-view-hub-container .hub-loading-spinner-overlay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.triage-view-hub-container .triage-view-hub-pivot-bar .triage-view-hub-pivot-content {
+  overflow-y: hidden;
+}
+
+.triage-view-hub-container .triage-view-hub-pivot-bar .triage-view-hub-pivot-content .query-charts-view-container {
+  overflow: auto;
+}
+
+.triage-view-hub-container .messages {
+  flex-grow: 0;
+}
+
+.triage-view-hub-container .messages .info a {
+  padding: 0;
+}
+
+.triage-view-hub-container .messages .info {
+  background-color: rgba( 199, 224, 244 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-20,199, 224, 244) ,  1 );
+}
+
+.triage-view-hub-container .triage-view-hub.vss-Hub {
+  flex-grow: 1;
+}
+
+.triage-view-hub-container .triage-view-hub .work-items-view.new-queries-view {
+  height: auto;
+}
+
+.triage-view-hub-container .triage-view-hub .work-items-view.new-queries-view .workitem-edit-view {
+  height: auto;
+}
+
+.triage-view-hub-container .triage-view-hub.new-query-hub .vss-HubBreadcrumb .ms-Breadcrumb-listItem:nth-of-type(2) .vss-HubBreadcrumb--item > button {
+  font-style: italic;
+}
+
+.triage-view-hub-container .triage-view-hub .hub-header-icon.query-type-empty-icon {
+  visibility: hidden;
+}
+
+.triage-view-hub-container .triage-view-hub .vss-PivotBar--header {
+  min-height: 40px;
+}
+
+.triage-view-hub-container .triage-view-hub .vss-HubTileRegion {
+  height: auto;
+}
+
+.triage-view-hub-container .triage-view-hub .vss-HubTileRegion .vss-HubTextTile {
+  justify-content: inherit;
+}
+
+.triage-view-hub-container .triage-view-hub .vss-HubTileRegion .vss-HubTextTile .vss-HubTextTile--primaryText.vss-HubTextTile--primaryTextOnly {
+  font-weight: inherit;
+}
+
+.triage-view-hub-container .triage-view-hub .query-editor .leftPane {
+  display: -webkit-box;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.triage-view-hub-container .triage-view-hub .query-editor .leftPane .query-options {
+  -webkit-box-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 12px;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.triage-view-hub-container .triage-view-hub .query-editor .leftPane .query-options .query-type .query-type-label {
+  margin-left: 0;
+}
+
+.triage-view-hub-container .triage-view-hub .query-editor .leftPane .filters {
+  -webkit-box-flex: 1 0 0%;
+  -webkit-flex: 1 0 0%;
+  flex: 1 0 0%;
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 0;
+}
+
+.triage-view-hub-container .triage-view-hub .query-editor .leftPane .filters .clauses .add-remove {
+  padding-left: 5px;
+}
+
+.triage-view-hub-container .triage-view-hub .query-editor .value .field-filter-value-control.identity-picker-container {
+  padding: 0px;
+}
+
+.triage-view-hub-container .triage-view-hub .content-host .external-content-host {
+  height: auto;
+}
+
+.triage-view-hub-container .triage-view-hub .content-host .external-content-host .external-content-host-container {
+  position: absolute;
+}
+
+.triage-view-hub-container .triage-view-hub .content-host .external-content-host .external-content-host-container iframe {
+  display: block;
+}
+
+.triage-view-hub-container .triage-view-hub .grid-header .grid-header-column.expand-collapse-icons-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.triage-view-hub-container .triage-view-hub .grid-header .grid-header-column.expand-collapse-icons-header .separator {
+  display: none;
+}
+
+.triage-view-hub-container .triage-view-hub .grid-header .grid-header-column.expand-collapse-icons-header .expand-icon, .triage-view-hub-container .triage-view-hub .grid-header .grid-header-column.expand-collapse-icons-header .collapse-icon {
+  padding-top: 7px;
+  padding-left: 2px;
+}
+
+.triage-view-hub-container .triage-view-hub .grid-header .grid-header-column.expand-collapse-icons-header:hover {
+  background-color: rgba( 234, 234, 234 ,  1 );
+  background-color: rgba( var(--palette-neutral-8,234, 234, 234) ,  1 );
+}
+
+.breadcrumb-dropdown-icon.bowtie-icon {
+  color: rgba(0, 0, 0, .9);
+  color: var(--text-primary-color,rgba(0, 0, 0, .9));
+}
+
+.queries-breadcrumb-picker .query-name-part {
+  font-weight: bold;
+}

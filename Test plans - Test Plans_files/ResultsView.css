@@ -1,0 +1,218 @@
+/** Automatically converted from TriageView.css **/
+.triage-view {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.triage-view .hub-pivot .pivot-view {
+  margin-left: 10px;
+}
+
+.triage-view .hub-pivot .pivot-view li:first-child a {
+  padding-left: 10px;
+}
+
+.triage-view .work-item-form-container {
+  height: 100%;
+}
+
+.triage-view > .content {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.triage-view .splitter.vertical > .rightPane {
+  margin-top: 4px;
+}
+
+.triage-view .hub-no-content-gutter {
+  padding-left: 0;
+}
+
+.triage-view .right-hub-content .splitter.horizontal .hub-no-content-gutter {
+  border-top:  1px solid;
+  border-top-color: rgba( 218, 218, 218 ,  1 );
+  border-top-color: rgba( var(--palette-neutral-10,218, 218, 218) ,  1 );
+}
+
+.triage-view .toolbar.query-result-grid-toolbar {
+  margin-right: 16px;
+  margin-left: 12px;
+}
+
+.triage-view .toolbar.query-result-grid-toolbar .menu-bar {
+  white-space: inherit;
+}
+
+.triage-view .work-item-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  top: 44px;
+  border-bottom: 0 !important;
+}
+
+.triage-view .work-item-list.with-filter-bar {
+  top: 89px;
+}
+
+.triage-view .work-item-form ~ .control-loading-overlay,
+.triage-view ~ .work-item-form ~ .control-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--background-color,rgba(255, 255, 255, 1));
+  opacity: 1;
+  filter: alpha(Opacity=100);
+  z-index: 10000;
+}
+
+.menu-item.toggle-filter-bar {
+  margin-right: 24px;
+}
+
+.toolbar.filter-bar {
+  display: none;
+  border-top: none;
+  height: auto;
+}
+
+.toolbar.filter-bar ul {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+/* Used to move the search button to the right side of the page */
+.text-filter-button {
+  float: right;
+  margin-right: 7px !important;
+  /* Overrides the menu-bar margin so the search button when hovered is not against the edge of screen */
+}
+
+.text-filter-image {
+  float: right;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 4px;
+  top: 2px;
+  cursor: pointer;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item, .backlog-header .menu-bar .text-filter-box.menu-item {
+  cursor: initial;
+  float: right;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item.hover, .backlog-header .menu-bar .text-filter-box.menu-item.hover {
+  background-color: transparent;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .icon, .query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text, .backlog-header .menu-bar .text-filter-box.menu-item .icon, .backlog-header .menu-bar .text-filter-box.menu-item .text {
+  display: none;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box {
+  position: relative;
+  cursor: text;
+  float: right;
+  width: 146px;
+  height: 20px;
+  outline: 0px;
+  background-color: rgba( 234, 234, 234 ,  1 );
+  background-color: rgba( var(--palette-neutral-8,234, 234, 234) ,  1 );
+  border: 1px solid transparent;
+  /* FireFox 19+ */
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box ::-webkit-input-placeholder, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box ::-moz-placeholder, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box ::-moz-placeholder {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+  opacity: 1;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box input:-ms-placeholder, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box input:-ms-placeholder {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box ::-ms-input-placeholder, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box ::-ms-input-placeholder {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box :-ms-input-placeholder, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box :-ms-input-placeholder {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box .watermark, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box .watermark {
+  font-style: inherit;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box .base-filter-box, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box .base-filter-box {
+  border: 0px;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box input, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box input {
+  padding: 3px 3px 4px 3px;
+  margin-top: 0px;
+  border-style: none;
+  outline: 0px;
+  /* Prevents the outline from showing when typing in the field */
+  width: 144px;
+  height: 18px;
+  font-size: 11px;
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+  background-color: transparent;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box input::-ms-clear, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box input::-ms-clear {
+  display: none;
+  /* Prevents IE10 x (clear) icon from showing up as to not confuse users */
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box .text-filter-image.bowtie-icon, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box .text-filter-image.bowtie-icon {
+  right: 2px;
+  top: 1px;
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box.active, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box.active {
+  border-color: rgba( 244, 244, 244 ,  1 );
+  border-color: rgba( var(--palette-neutral-4,244, 244, 244) ,  1 );
+  border:  1px solid;
+  border-color: rgba( 244, 244, 244 ,  1 );
+  border-color: rgba( var(--palette-neutral-4,244, 244, 244) ,  1 );
+}
+
+.query-result-grid-toolbar .menu-bar .text-filter-container.menu-item .text-filter-box.active input, .backlog-header .menu-bar .text-filter-box.menu-item .text-filter-box.active input {
+  background-color: rgba( 255, 255, 255 ,  1 );
+  background-color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+}
+
+.new-queries-view .triage-view {
+  top: 0px;
+}
+
+.new-queries-view .triage-view .work-item-list {
+  top: 0px;
+}

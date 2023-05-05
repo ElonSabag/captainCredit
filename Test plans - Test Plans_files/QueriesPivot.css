@@ -1,0 +1,200 @@
+.query-push-to-dashboard-menu-item.bowtie-math-plus {
+  color: rgba(0, 90, 158, 1);
+  color: var(--communication-foreground,rgba(0, 90, 158, 1));
+}
+
+.queries-folder-view-hub .all-queries .query-column-header,
+.queries-folder-view-hub .all-queries .query-column-header:hover,
+.queries-folder-view-hub .all-queries .query-column-header:focus, .queries-folder-view-hub .favorite-queries .query-column-header,
+.queries-folder-view-hub .favorite-queries .query-column-header:hover,
+.queries-folder-view-hub .favorite-queries .query-column-header:focus, .queries-folder-view-hub .search-queries .query-column-header,
+.queries-folder-view-hub .search-queries .query-column-header:hover,
+.queries-folder-view-hub .search-queries .query-column-header:focus, .queries-folder-view-hub .folder-queries .query-column-header,
+.queries-folder-view-hub .folder-queries .query-column-header:hover,
+.queries-folder-view-hub .folder-queries .query-column-header:focus,
+.queries-view-hub .all-queries .query-column-header,
+.queries-view-hub .all-queries .query-column-header:hover,
+.queries-view-hub .all-queries .query-column-header:focus,
+.queries-view-hub .favorite-queries .query-column-header,
+.queries-view-hub .favorite-queries .query-column-header:hover,
+.queries-view-hub .favorite-queries .query-column-header:focus,
+.queries-view-hub .search-queries .query-column-header,
+.queries-view-hub .search-queries .query-column-header:hover,
+.queries-view-hub .search-queries .query-column-header:focus,
+.queries-view-hub .folder-queries .query-column-header,
+.queries-view-hub .folder-queries .query-column-header:hover,
+.queries-view-hub .folder-queries .query-column-header:focus {
+  color: rgba(0, 0, 0, .9);
+  color: var(--text-primary-color,rgba(0, 0, 0, .9));
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row, .queries-folder-view-hub .favorite-queries .queries-list-row, .queries-folder-view-hub .search-queries .queries-list-row, .queries-folder-view-hub .folder-queries .queries-list-row,
+.queries-view-hub .all-queries .queries-list-row,
+.queries-view-hub .favorite-queries .queries-list-row,
+.queries-view-hub .search-queries .queries-list-row,
+.queries-view-hub .folder-queries .queries-list-row {
+  height: 36px;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .dragged-row-hover, .queries-folder-view-hub .favorite-queries .queries-list-row .dragged-row-hover, .queries-folder-view-hub .search-queries .queries-list-row .dragged-row-hover, .queries-folder-view-hub .folder-queries .queries-list-row .dragged-row-hover,
+.queries-view-hub .all-queries .queries-list-row .dragged-row-hover,
+.queries-view-hub .favorite-queries .queries-list-row .dragged-row-hover,
+.queries-view-hub .search-queries .queries-list-row .dragged-row-hover,
+.queries-view-hub .folder-queries .queries-list-row .dragged-row-hover {
+  background-color: rgba( 218, 218, 218 ,  1 );
+  background-color: rgba( var(--palette-neutral-10,218, 218, 218) ,  1 );
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell {
+  font-size: 14px;
+  cursor: default;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-ellipsis-empty {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column {
+  display: flex;
+  flex-grow: 1;
+  width: 0px;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  flex-grow: 1;
+  width: 0px;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder), .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder), .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder), .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder),
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder),
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder),
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder),
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis:not(.query-folder) {
+  display: flex;
+  align-items: center;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder, .queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.bowtie-folder,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .bowtie-icon.query-type-icon {
+  margin-right: 4px;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-spinner {
+  margin-bottom: -3px;
+  display: inline-block;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-name-ellipsis .query-folder-name.query-header {
+  font-weight: 600;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite {
+  flex-grow: 0;
+  padding: 0px 5px;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .starbutton {
+  cursor: pointer;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .all-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .search-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .folder-queries .queries-list-row .query-column-cell.query-name .query-name-column .query-favorite .bowtie-icon.bowtie-favorite-outline {
+  visibility: hidden;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .favorite-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .search-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .folder-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .all-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .favorite-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .search-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .folder-queries .queries-list-row:hover .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline {
+  visibility: visible;
+}
+
+.queries-folder-view-hub .all-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .favorite-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .search-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline, .queries-folder-view-hub .folder-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .all-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .favorite-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .search-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline,
+.queries-view-hub .folder-queries .queries-list-row .is-selected .query-column-cell.query-name .query-favorite .bowtie-icon.bowtie-favorite-outline {
+  visibility: visible;
+}
+
+.queries-folder-view-hub .all-queries .query-column-cell, .queries-folder-view-hub .favorite-queries .query-column-cell, .queries-folder-view-hub .search-queries .query-column-cell, .queries-folder-view-hub .folder-queries .query-column-cell,
+.queries-view-hub .all-queries .query-column-cell,
+.queries-view-hub .favorite-queries .query-column-cell,
+.queries-view-hub .search-queries .query-column-cell,
+.queries-view-hub .folder-queries .query-column-cell {
+  padding: 0px;
+}
+
+.queries-folder-view-hub .all-queries button[aria-sort="none"], .queries-folder-view-hub .favorite-queries button[aria-sort="none"], .queries-folder-view-hub .search-queries button[aria-sort="none"], .queries-folder-view-hub .folder-queries button[aria-sort="none"],
+.queries-view-hub .all-queries button[aria-sort="none"],
+.queries-view-hub .favorite-queries button[aria-sort="none"],
+.queries-view-hub .search-queries button[aria-sort="none"],
+.queries-view-hub .folder-queries button[aria-sort="none"] {
+  cursor: default;
+}
+
+.queries-folder-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name,
+.queries-view-hub .favorite-queries .queries-list-row .query-column-cell.query-name {
+  padding-left: 42px;
+}

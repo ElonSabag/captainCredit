@@ -1,0 +1,19 @@
+.inline-identity {
+  display: inline-block;
+}
+
+.inline-identity .identity-inline-image {
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin: 0 8px 0 0;
+}
+
+.inline-identity .identity-inline-image > img.identity-picture {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.inline-identity .identity-bold {
+  margin-right: 5px;
+}

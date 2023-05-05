@@ -1,0 +1,279 @@
+/*!
+ * ASP.NET SignalR JavaScript Library 2.4.2
+ * http://signalr.net/
+ *
+ * Copyright (c) .NET Foundation. All rights reserved.
+ * Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+ *
+ */
+
+/// <reference path="..\..\SignalR.Client.JS\Scripts\jquery-1.6.4.js" />
+/// <reference path="jquery.signalR.js" />
+(function ($, window, undefined) {
+    /// <param name="$" type="jQuery" />
+    "use strict";
+
+    if (typeof ($.signalR) !== "function") {
+        throw new Error("SignalR: SignalR is not loaded. Please ensure jquery.signalR-x.js is referenced before ~/signalr/js.");
+    }
+
+    var signalR = $.signalR;
+
+    function makeProxyCallback(hub, callback) {
+        return function () {
+            // Call the client hub method
+            callback.apply(hub, $.makeArray(arguments));
+        };
+    }
+
+    function registerHubProxies(instance, shouldSubscribe) {
+        var key, hub, memberKey, memberValue, subscriptionMethod;
+
+        for (key in instance) {
+            if (instance.hasOwnProperty(key)) {
+                hub = instance[key];
+
+                if (!(hub.hubName)) {
+                    // Not a client hub
+                    continue;
+                }
+
+                if (shouldSubscribe) {
+                    // We want to subscribe to the hub events
+                    subscriptionMethod = hub.on;
+                } else {
+                    // We want to unsubscribe from the hub events
+                    subscriptionMethod = hub.off;
+                }
+
+                // Loop through all members on the hub and find client hub functions to subscribe/unsubscribe
+                for (memberKey in hub.client) {
+                    if (hub.client.hasOwnProperty(memberKey)) {
+                        memberValue = hub.client[memberKey];
+
+                        if (!$.isFunction(memberValue)) {
+                            // Not a client hub function
+                            continue;
+                        }
+
+                        // Use the actual user-provided callback as the "identity" value for the registration.
+                        subscriptionMethod.call(hub, memberKey, makeProxyCallback(hub, memberValue), memberValue);
+                    }
+                }
+            }
+        }
+    }
+
+    $.hubConnection.prototype.createHubProxies = function () {
+        var proxies = {};
+        this.starting(function () {
+            // Register the hub proxies as subscribed
+            // (instance, shouldSubscribe)
+            registerHubProxies(proxies, true);
+
+            this._registerSubscribedHubs();
+        }).disconnected(function () {
+            // Unsubscribe all hub proxies when we "disconnect".  This is to ensure that we do not re-add functional call backs.
+            // (instance, shouldSubscribe)
+            registerHubProxies(proxies, false);
+        });
+
+        proxies['agentHub'] = this.createHubProxy('agentHub'); 
+        proxies['agentHub'].client = { };
+        proxies['agentHub'].server = {
+            subscribe: function (poolId, agentId) {
+                return proxies['agentHub'].invoke.apply(proxies['agentHub'], $.merge(["Subscribe"], $.makeArray(arguments)));
+             },
+
+            unsubscribe: function (poolId, agentId) {
+                return proxies['agentHub'].invoke.apply(proxies['agentHub'], $.merge(["Unsubscribe"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['asyncGitOperationHub'] = this.createHubProxy('asyncGitOperationHub'); 
+        proxies['asyncGitOperationHub'].client = { };
+        proxies['asyncGitOperationHub'].server = {
+            subscribe: function (operationId) {
+                return proxies['asyncGitOperationHub'].invoke.apply(proxies['asyncGitOperationHub'], $.merge(["Subscribe"], $.makeArray(arguments)));
+             },
+
+            unsubscribe: function (operationId) {
+                return proxies['asyncGitOperationHub'].invoke.apply(proxies['asyncGitOperationHub'], $.merge(["Unsubscribe"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['buildDetailHub'] = this.createHubProxy('buildDetailHub'); 
+        proxies['buildDetailHub'].client = { };
+        proxies['buildDetailHub'].server = {
+            stopWatchingBuild: function (projectId, buildId) {
+                return proxies['buildDetailHub'].invoke.apply(proxies['buildDetailHub'], $.merge(["StopWatchingBuild"], $.makeArray(arguments)));
+             },
+
+            stopWatchingCollection: function () {
+                return proxies['buildDetailHub'].invoke.apply(proxies['buildDetailHub'], $.merge(["StopWatchingCollection"], $.makeArray(arguments)));
+             },
+
+            stopWatchingProject: function (projectId) {
+                return proxies['buildDetailHub'].invoke.apply(proxies['buildDetailHub'], $.merge(["StopWatchingProject"], $.makeArray(arguments)));
+             },
+
+            syncState: function (projectId, buildId) {
+                return proxies['buildDetailHub'].invoke.apply(proxies['buildDetailHub'], $.merge(["SyncState"], $.makeArray(arguments)));
+             },
+
+            watchBuild: function (projectId, buildId) {
+                return proxies['buildDetailHub'].invoke.apply(proxies['buildDetailHub'], $.merge(["WatchBuild"], $.makeArray(arguments)));
+             },
+
+            watchCollection: function () {
+                return proxies['buildDetailHub'].invoke.apply(proxies['buildDetailHub'], $.merge(["WatchCollection"], $.makeArray(arguments)));
+             },
+
+            watchProject: function (projectId) {
+                return proxies['buildDetailHub'].invoke.apply(proxies['buildDetailHub'], $.merge(["WatchProject"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['codeReviewDetailHub'] = this.createHubProxy('codeReviewDetailHub'); 
+        proxies['codeReviewDetailHub'].client = { };
+        proxies['codeReviewDetailHub'].server = {
+            stopWatchingReview: function (reviewId) {
+                return proxies['codeReviewDetailHub'].invoke.apply(proxies['codeReviewDetailHub'], $.merge(["StopWatchingReview"], $.makeArray(arguments)));
+             },
+
+            watchReview: function (reviewId) {
+                return proxies['codeReviewDetailHub'].invoke.apply(proxies['codeReviewDetailHub'], $.merge(["WatchReview"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['deploymentGroupHub'] = this.createHubProxy('deploymentGroupHub'); 
+        proxies['deploymentGroupHub'].client = { };
+        proxies['deploymentGroupHub'].server = {
+            subscribe: function (projectId, deploymentGroupId) {
+                return proxies['deploymentGroupHub'].invoke.apply(proxies['deploymentGroupHub'], $.merge(["Subscribe"], $.makeArray(arguments)));
+             },
+
+            unsubscribe: function (projectId, deploymentGroupId) {
+                return proxies['deploymentGroupHub'].invoke.apply(proxies['deploymentGroupHub'], $.merge(["Unsubscribe"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['kanbanBoardHub'] = this.createHubProxy('kanbanBoardHub'); 
+        proxies['kanbanBoardHub'].client = { };
+        proxies['kanbanBoardHub'].server = {
+            unwatchKanbanbBoard: function (workItemTypeExtensionId) {
+                return proxies['kanbanBoardHub'].invoke.apply(proxies['kanbanBoardHub'], $.merge(["UnwatchKanbanbBoard"], $.makeArray(arguments)));
+             },
+
+            watchKanbanBoard: function (workItemTypeExtensionId) {
+                return proxies['kanbanBoardHub'].invoke.apply(proxies['kanbanBoardHub'], $.merge(["WatchKanbanBoard"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['poolHub'] = this.createHubProxy('poolHub'); 
+        proxies['poolHub'].client = { };
+        proxies['poolHub'].server = {
+            subscribe: function (poolId) {
+                return proxies['poolHub'].invoke.apply(proxies['poolHub'], $.merge(["Subscribe"], $.makeArray(arguments)));
+             },
+
+            unsubscribe: function (poolId) {
+                return proxies['poolHub'].invoke.apply(proxies['poolHub'], $.merge(["Unsubscribe"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['poolsHub'] = this.createHubProxy('poolsHub'); 
+        proxies['poolsHub'].client = { };
+        proxies['poolsHub'].server = {
+            subscribe: function () {
+                return proxies['poolsHub'].invoke.apply(proxies['poolsHub'], $.merge(["Subscribe"], $.makeArray(arguments)));
+             },
+
+            unsubscribe: function () {
+                return proxies['poolsHub'].invoke.apply(proxies['poolsHub'], $.merge(["Unsubscribe"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['pullRequestDetailHub'] = this.createHubProxy('pullRequestDetailHub'); 
+        proxies['pullRequestDetailHub'].client = { };
+        proxies['pullRequestDetailHub'].server = {
+            subscribe: function (pullRequestId, repositoryId) {
+                return proxies['pullRequestDetailHub'].invoke.apply(proxies['pullRequestDetailHub'], $.merge(["Subscribe"], $.makeArray(arguments)));
+             },
+
+            unsubscribe: function (pullRequestId) {
+                return proxies['pullRequestDetailHub'].invoke.apply(proxies['pullRequestDetailHub'], $.merge(["Unsubscribe"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['taskAgentPoolHub'] = this.createHubProxy('taskAgentPoolHub'); 
+        proxies['taskAgentPoolHub'].client = { };
+        proxies['taskAgentPoolHub'].server = {
+            subscribe: function (poolId) {
+                return proxies['taskAgentPoolHub'].invoke.apply(proxies['taskAgentPoolHub'], $.merge(["Subscribe"], $.makeArray(arguments)));
+             },
+
+            unsubscribe: function (poolId) {
+                return proxies['taskAgentPoolHub'].invoke.apply(proxies['taskAgentPoolHub'], $.merge(["Unsubscribe"], $.makeArray(arguments)));
+             },
+
+            unWatchResourceUsageChanges: function () {
+                return proxies['taskAgentPoolHub'].invoke.apply(proxies['taskAgentPoolHub'], $.merge(["UnWatchResourceUsageChanges"], $.makeArray(arguments)));
+             },
+
+            watchResourceUsageChanges: function () {
+                return proxies['taskAgentPoolHub'].invoke.apply(proxies['taskAgentPoolHub'], $.merge(["WatchResourceUsageChanges"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['taskboardHub'] = this.createHubProxy('taskboardHub'); 
+        proxies['taskboardHub'].client = { };
+        proxies['taskboardHub'].server = {
+            unwatchTaskboard: function (teamId) {
+                return proxies['taskboardHub'].invoke.apply(proxies['taskboardHub'], $.merge(["UnwatchTaskboard"], $.makeArray(arguments)));
+             },
+
+            watchTaskboard: function (teamId) {
+                return proxies['taskboardHub'].invoke.apply(proxies['taskboardHub'], $.merge(["WatchTaskboard"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['testHub'] = this.createHubProxy('testHub'); 
+        proxies['testHub'].client = { };
+        proxies['testHub'].server = {
+            unWatchBuild: function (buildId) {
+                return proxies['testHub'].invoke.apply(proxies['testHub'], $.merge(["UnWatchBuild"], $.makeArray(arguments)));
+             },
+
+            unWatchRelease: function (releaseId, environmentId) {
+                return proxies['testHub'].invoke.apply(proxies['testHub'], $.merge(["UnWatchRelease"], $.makeArray(arguments)));
+             },
+
+            watchBuild: function (buildId) {
+                return proxies['testHub'].invoke.apply(proxies['testHub'], $.merge(["WatchBuild"], $.makeArray(arguments)));
+             },
+
+            watchRelease: function (releaseId, environmentId) {
+                return proxies['testHub'].invoke.apply(proxies['testHub'], $.merge(["WatchRelease"], $.makeArray(arguments)));
+             }
+        };
+
+        proxies['workItemHub'] = this.createHubProxy('workItemHub'); 
+        proxies['workItemHub'].client = { };
+        proxies['workItemHub'].server = {
+            unwatchWorkItem: function (workItemId) {
+                return proxies['workItemHub'].invoke.apply(proxies['workItemHub'], $.merge(["UnwatchWorkItem"], $.makeArray(arguments)));
+             },
+
+            watchWorkItem: function (workItemId) {
+                return proxies['workItemHub'].invoke.apply(proxies['workItemHub'], $.merge(["WatchWorkItem"], $.makeArray(arguments)));
+             }
+        };
+
+        return proxies;
+    };
+
+    signalR.hub = $.hubConnection("/_signalr/_apis/fbf852ac-b067-4509-a915-cf009115adfa/signalr", { useDefaultPath: false });
+    $.extend(signalR, signalR.hub.createHubProxies());
+
+}(window.jQuery, window));

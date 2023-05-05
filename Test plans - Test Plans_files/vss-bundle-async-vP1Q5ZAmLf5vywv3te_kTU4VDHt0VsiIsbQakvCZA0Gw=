@@ -1,0 +1,2 @@
+if (window.performance && window.performance.mark) { window.performance.mark('startLoadBundleInner-async'); }
+if (window.performance && window.performance.mark) { window.performance.mark('endLoadBundleInner-async'); }

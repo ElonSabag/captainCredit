@@ -1,0 +1,303 @@
+.grid-cell .tfs-tags {
+  /* remove text-indent from grid-cell (originally 2px)*/
+  text-indent: 0px;
+  line-height: normal;
+  margin-bottom: 0px;
+}
+
+.grid-cell .tags-items-container {
+  overflow: visible;
+  /* overflow hidden causes clipping of tag borders inside grid rows. */
+}
+
+.grid-cell .tags-items-container ul > li {
+  margin-right: 1px;
+}
+
+div.tfs-tags {
+  margin-bottom: 6px;
+  line-height: 24px;
+}
+
+div.tags-label-container {
+  display: block;
+  float: left;
+  padding-left: 4px;
+  padding-right: 10px;
+  font-size: 11px;
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+div.tags-items-container {
+  overflow: hidden;
+}
+
+.tags-items-container ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.tags-items-container ul > li {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 0px;
+  outline: none;
+}
+
+.tag-item-delete-experience {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tag-box {
+  padding: 2px 6px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+  background-color: rgba( 239, 246, 252 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-40,239, 246, 252) ,  1 );
+}
+
+.tag-delete {
+  padding: 2px 3px;
+  font-size: 12px;
+  background-color: rgba( 239, 246, 252 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-40,239, 246, 252) ,  1 );
+}
+
+.tag-delete .icon {
+  vertical-align: top;
+  margin-top: 4px;
+}
+
+.grid-row.invalid-workitem-row .tag-box {
+  color: rgba( 218, 10, 0 ,  1 );
+  color: rgba( var(--palette-accent1,218, 10, 0) ,  1 );
+}
+
+.tag-item:hover .tag-box-selectable,
+.tag-item:hover .tag-box-selectable .bowtie-math-plus-light,
+.tag-box-selectable.pressed {
+  cursor: pointer;
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+  background-color: rgba( 222, 236, 249 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-30,222, 236, 249) ,  1 );
+}
+
+.tags-input {
+  overflow: hidden;
+  width: 150px;
+  margin: 0px;
+  outline: none;
+  border:  1px solid;
+  border-color: rgba( 200, 200, 200 ,  1 );
+  border-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+}
+
+.tags-input::-ms-clear {
+  display: none;
+}
+
+.tags-filter-dropdown-input {
+  z-index: 9000 !important;
+  /* set important to override jquery inline z-index style */
+  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--background-color,rgba(255, 255, 255, 1));
+  border:  1px solid;
+  border-color: rgba( 200, 200, 200 ,  1 );
+  border-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+}
+
+.tags-add-button {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tags-add-button .tag-box-selectable,
+.tags-add-button .tag-box-selectable .bowtie-math-plus-light {
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+  background-color: rgba( 239, 246, 252 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-40,239, 246, 252) ,  1 );
+}
+
+/* Tag Filter Control */
+.tfs-tags-filter {
+  overflow: auto;
+  width: 100%;
+  line-height: 35px;
+  height: 42px;
+}
+
+.tfs-tags-filter .tfs-tags {
+  line-height: inherit;
+}
+
+.tfs-tags.tag-filter-available-tags {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tfs-tags.tag-filter-applied-tags {
+  margin-right: 50px;
+  display: block;
+  float: left;
+}
+
+.tfs-tags-filter .tag-item-count {
+  padding-left: 5px;
+  font-size: 10px;
+}
+
+.tfs-tags-filter .tag-filter-control-label {
+  display: block;
+  float: left;
+  padding-left: 4px;
+  padding-right: 10px;
+  font-size: 11px;
+  color: rgba(0, 0, 0, .55);
+  color: var(--text-secondary-color,rgba(0, 0, 0, .55));
+}
+
+.tfs-tags-filter .tag-filter-control-show-all {
+  margin-right: 5px;
+  list-style: none;
+  outline: none;
+}
+
+.tfs-tags-filter .tag-filter-control-show-all-container {
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  float: left;
+}
+
+.tags-autocomplete-menu {
+  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--background-color,rgba(255, 255, 255, 1));
+  max-height: 139px;
+  /* show only five elements in the autocomplete, then show scroll */
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
+  padding: inherit;
+  z-index: 9000 !important;
+  /* set important to override jquery inline z-index style */
+  max-width: 296px;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  border:  1px solid;
+  border-color: rgba( 200, 200, 200 ,  1 );
+  border-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+}
+
+.tags-autocomplete-menu .ui-menu-item a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: rgba( 0, 0, 0 ,  1 );
+  color: rgba( var(--palette-neutral-100,0, 0, 0) ,  1 );
+}
+
+.tags-autocomplete-menu .menu-item-header {
+  color: rgba(0, 90, 158, 1);
+  color: var(--communication-foreground,rgba(0, 90, 158, 1));
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.tags-autocomplete-menu .tag-suggestions-separator {
+  float: left;
+  width: 100%;
+  clear: left;
+  border: 0px;
+}
+
+.tags-autocomplete-menu .tag-suggestions-separator .separator {
+  height: 1px;
+  background-color: rgba( 200, 200, 200 ,  1 );
+  background-color: rgba( var(--palette-neutral-20,200, 200, 200) ,  1 );
+  border-top: 1px solid transparent;
+  cursor: default;
+}
+
+.tags-autocomplete-menu .ui-menu-item a.ui-state-active {
+  font-weight: normal;
+  margin: 0;
+  background-color: rgba( 222, 236, 249 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-30,222, 236, 249) ,  1 );
+}
+
+.tag-container {
+  outline: none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border:  1px solid;
+  border-color: rgba( 255, 255, 255 ,  1 );
+  border-color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
+}
+
+.tag-delete,
+.tag-container-selectable {
+  cursor: pointer;
+}
+
+.tag-box {
+  cursor: default;
+}
+
+.tag-delete:hover {
+  background-color: rgba( 222, 236, 249 ,  1 );
+  background-color: rgba( var(--palette-primary-tint-30,222, 236, 249) ,  1 );
+}
+
+.tag-item:focus .tag-box-selectable,
+.tag-item:focus .tag-box-selectable .bowtie-math-plus-light,
+.tag-item:focus .tag-box-delete-experience,
+.tag-box-delete-experience:focus {
+  cursor: pointer;
+  color: rgba( 255, 255, 255 ,  1 );
+  color: rgba( var(--palette-neutral-0,255, 255, 255) ,  1 );
+  background-color: rgba(0, 120, 212, 1);
+  background-color: var(--communication-background,rgba(0, 120, 212, 1));
+}
+
+.tag-item:focus .tag-box-selectable:hover,
+.tag-item:focus .tag-delete:hover,
+.tag-delete:focus:hover {
+  background-color: rgba( 0, 90, 158 ,  1 );
+  background-color: rgba( var(--palette-primary-shade-20,0, 90, 158) ,  1 );
+}
+
+.vss-PickList.queries-breadcrumb-picker .vss-PickList--selectableElementButton:hover .query-folder-picklist-folder {
+  color: #dcb67a !important;
+}
+
+.vss-PickList.queries-breadcrumb-picker .vss-PickList--items {
+  max-height: inherit;
+}
+
+.queries-folder-view-hub .vss-HubBreadcrumb--container,
+.queries-view-hub .vss-HubBreadcrumb--container,
+.triage-view-hub-container .vss-HubBreadcrumb--container {
+  flex-grow: 1;
+}
+
+.queries-folder-view-hub .tab-loading,
+.queries-view-hub .tab-loading {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}

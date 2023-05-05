@@ -1,0 +1,7 @@
+.query-path-cell-component {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  padding-left: 2px;
+}
